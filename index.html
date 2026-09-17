@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Port Simulation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main id="game-shell">
+    <canvas id="gameCanvas"></canvas>
+
+    <section id="ui-overlay" aria-label="Simulation UI Overlay">
+      <div id="task-panel" class="ui-panel">
+        <h2>OPERATION ORDER</h2>
+        <ul>
+          <li><input id="task-pickup" type="checkbox" disabled /> Pick up assigned container</li>
+          <li><input id="task-deliver" type="checkbox" disabled /> Deliver to green drop zone</li>
+          <li><input id="task-safety" type="checkbox" disabled /> Complete shift with safe operations</li>
+        </ul>
+      </div>
+
+      <div id="score-panel" class="ui-panel">
+        <h2>EFFICIENCY SCORE</h2>
+        <p id="score-value">Score: 100%</p>
+      </div>
+
+      <div id="minimap-panel" class="ui-panel">
+        <h2>TOS / MINI-MAP</h2>
+        <div id="minimap-frame"></div>
+        <canvas id="minimapCanvas" width="240" height="140"></canvas>
+      </div>
+
+      <div id="safety-panel" class="ui-panel">
+        <h2>SAFETY RULES</h2>
+        <ul>
+          <li><span id="speed-rule-status" class="rule-status pass">✓</span> Speed Limit (max 15km/h)</li>
+          <li><span id="horn-rule-status" class="rule-status pass">✓</span> Use horn near workers</li>
+        </ul>
+      </div>
+
+      <div id="clock-panel" class="ui-panel">
+        <h2>TIME LEFT</h2>
+        <p id="shift-clock-value">Time: 60s</p>
+      </div>
+
+      <div id="vehicle-panel" class="ui-panel">
+        <h2>VEHICLE STATUS</h2>
+        <p id="vehicle-speed-value">Speed: 0 km/h</p>
+        <p id="vehicle-load-value">Status: EMPTY</p>
+        <p id="vehicle-fuel-value">Fuel: 100%</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+
+</html>
